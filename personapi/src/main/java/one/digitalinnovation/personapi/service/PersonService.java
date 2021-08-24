@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Service
 public class PersonService {
 
@@ -24,5 +26,10 @@ public class PersonService {
                 .builder()
                 .message("Created person with id: " + savedPerson.getId())
                 .build();
+    }
+
+    public List<Person> listAll() {
+        List<Person> allPeople = personRepository.findAll();
+        return allPeople;
     }
 }
