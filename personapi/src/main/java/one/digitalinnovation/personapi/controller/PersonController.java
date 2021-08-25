@@ -31,9 +31,11 @@ public class PersonController {
     }
 
     @GetMapping
-    public List<Person> listAll(){
+    public List<PersonDTO> listAll(){
         return personService.listAll();
     }
+
+//    public
 
 //    @GetMapping
 //    public String testeAPI(){

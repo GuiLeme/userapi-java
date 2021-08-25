@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
@@ -34,8 +35,10 @@ public class PersonService {
                 .build();
     }
 
-    public List<Person> listAll() {
+    public List<PersonDTO> listAll() {
         List<Person> allPeople = personRepository.findAll();
-        return allPeople;
+        return allPeople.stream()
+                .map(personMapper::toDTO)
+                .collect(Collectors.toList());
     }
 }
