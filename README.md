@@ -13,6 +13,7 @@ Method: POST
 Body: 
 
  - Example of a valid body:
+
 {
     "firstName": "Guilherme Pereira",
     "lastName": "Leme",
